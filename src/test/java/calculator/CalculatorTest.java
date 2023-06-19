@@ -14,22 +14,22 @@ class CalculatorTest {
 
     @org.junit.jupiter.api.Test
     void testAdd() {
-        assertEquals(5, 2+3, "La somma deve essere 5");
+        assertEquals(5, calc.add(3, 2), "La somma deve essere 5");
     }
 
     @org.junit.jupiter.api.Test
     void testSubstract() {
-        assertEquals(5, 8-3, "Il risultato deve essere 5.2");
+        assertEquals(5, calc.substract(8, 3), "Il risultato deve essere 5");
     }
 
     @org.junit.jupiter.api.Test
     void testMultiply() {
-        assertEquals(30, 6*5, "Il risultato deve essere 30");
+        assertEquals(30, calc.multiply(10, 3), "Il risultato deve essere 30");
     }
 
     @org.junit.jupiter.api.Test
     void testDivide() {
-        assertEquals(2, 6/3, "Il risultato deve essere 2");
+        assertEquals(2, calc.divide(6, 3), "Il risultato deve essere 2");
     }
 
     @org.junit.jupiter.api.Test
