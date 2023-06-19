@@ -1,20 +1,39 @@
 package calculator;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 class CalculatorTest {
-
-    @org.junit.jupiter.api.Test
-    void add() {
+    private Calculator calc;
+    @BeforeEach
+    public void init() {
+        calc = new Calculator();
     }
 
     @org.junit.jupiter.api.Test
-    void substract() {
+    void testAdd() {
+        assertEquals(5, 2+3, "La somma deve essere 5");
     }
 
     @org.junit.jupiter.api.Test
-    void multiply() {
+    void testSubstract() {
+        assertEquals(5, 8-3, "Il risultato deve essere 5.2");
     }
 
     @org.junit.jupiter.api.Test
-    void divide() {
+    void testMultiply() {
+        assertEquals(30, 6*5, "Il risultato deve essere 30");
+    }
+
+    @org.junit.jupiter.api.Test
+    void testDivide() {
+        assertEquals(2, 6/3, "Il risultato deve essere 2");
+    }
+
+    @org.junit.jupiter.api.Test
+    void testDivideForZero() {
+        assertThrows(ArithmeticException.class, () -> calc.divide(10, 0), "Deve tirare ArithmeticException se si divide per zero");
     }
 }
